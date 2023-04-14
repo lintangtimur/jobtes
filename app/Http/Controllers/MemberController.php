@@ -56,6 +56,15 @@ class MemberController extends Controller
         return redirect()->route('member')->with('message', 'data berhasil ditambahkan');
     }
 
+    public function register_store(EditUserRequest $editUserRequest, MemberService $memberService)
+    {
+        $foto_path = $editUserRequest->file('foto')->store('public');
+
+        $memberService->register_store($editUserRequest, $foto_path);
+
+        return redirect()->route('register')->with('message', 'data berhasil ditambahkan');
+    }
+
     
     public function show($id)
     {

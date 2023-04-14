@@ -14,6 +14,12 @@
 
 @section('content')
 
+    @if (\Session::has('message'))
+    <x-adminlte-alert theme="success" title="Success" dismissable>
+        {{Session::get('message')}}
+    </x-adminlte-alert>
+    @endif
+    
     @can('create member')
     <a href="{{route('member.add')}}" class="btn btn-info mb-2">Tambah User</a>
     @endcan

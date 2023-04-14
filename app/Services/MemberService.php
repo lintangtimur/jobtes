@@ -37,6 +37,27 @@ class MemberService
             
         });
     }
+
+    public function register_store($editUserRequest, $foto_path)
+    {
+        return DB::transaction(function () use ($editUserRequest, $foto_path){
+            $u = new User();
+            $u->nama_member = $editUserRequest->nama_member;
+            $u->email = $editUserRequest->email;
+            $u->no_hp = $editUserRequest->no_hp;
+            $u->tanggal_lahir = $editUserRequest->tanggal_lahir;
+            $u->jenis_kelamin = $editUserRequest->jenis_kelamin;
+            $u->no_ktp = $editUserRequest->no_ktp;
+            $u->path_foto = $foto_path;
+            $u->password = Hash::make($editUserRequest->password);
+            $u->save();
+
+            $role = Role::findByName('member');
+            $u->assignRole($role);
+
+            
+        });
+    }
     
     /**
      * update data

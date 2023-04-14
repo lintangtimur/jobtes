@@ -44,7 +44,7 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::view('login/member', 'login_member')->name('login.member');
-    Route::post('login/member/auth', [LoginController::class, 'login_member'])->name('login.member.auth');
+Route::post('register/store', [MemberController::class, 'register_store'])->name('register.store');
 
 
 Route::get('generate', function(){
