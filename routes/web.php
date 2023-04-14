@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('members/json', [MemberController::class, 'json'])->name('member.json');
     Route::get('member/{id}', [MemberController::class,'show'])->name('member.show')->middleware('signed');
     Route::post('member/update', [MemberController::class, 'update'])->name('member.update');
-    
+    Route::get('member/delete/{id}', [MemberController::class, 'destroy'])->name('member.destroy')->middleware('signed');
     
     
 });

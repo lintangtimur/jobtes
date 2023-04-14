@@ -90,14 +90,11 @@ class MemberController extends Controller
         return redirect()->route('member')->with('message', 'data berhasil diupdate');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Member  $member
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Member $member)
+
+    public function destroy($id)
     {
-        //
+        $user = User::where('id', $id)->delete();
+
+        return redirect()->route('member')->with('message', 'berhasil dihapus');
     }
 }

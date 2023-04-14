@@ -19,7 +19,7 @@
         {{Session::get('message')}}
     </x-adminlte-alert>
     @endif
-    
+
     @can('create member')
     <a href="{{route('member.add')}}" class="btn btn-info mb-2">Tambah User</a>
     @endcan
@@ -54,7 +54,7 @@
                             <a href="{{URL::signedRoute('member.show', $item->id)}}" class="btn-sm btn-info">Edit</a>
                             @endcan
                             @can('delete member')
-                            <a href="{{URL::signedRoute('member.show', $item->id)}}" class="btn-sm btn-danger">Delete</a>
+                            <a href="{{URL::signedRoute('member.destroy', $item->id)}}" class="btn-sm btn-danger">Delete</a>
                             @endcan
                         </td>
                     </tr>
