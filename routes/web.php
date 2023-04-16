@@ -21,8 +21,8 @@ use Spatie\Permission\Models\Role;
 */
 
 Route::get('/', function () {
-    
-    return view('welcome');
+    return redirect()->route('login');
+    // return view('welcome');
 });
 
 
