@@ -140,7 +140,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+
+                                <a href="{{route('login.member')}}" class="btn btn-primary"  rel="noopener noreferrer">Login sebagai member</a>
                             </div>
+                            
                         </div>
                     </form>
                 </div>
