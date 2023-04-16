@@ -48,7 +48,7 @@
                                 </button>
 
                                 
-                                <a href="{{route('login.member')}}" target="_blank" rel="noopener noreferrer">Login sebagai member</a>
+                                <a href="{{route('login.member')}}" rel="noopener noreferrer">Login sebagai member</a>
                             </div>
                             
                         </div>
