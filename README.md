@@ -1,10 +1,10 @@
 ## Login
-#### Sebagai admin
+#### Sebagai admin (login dengan nama member dan password)
 username:admin
 password:12345678
 
-#### Sebagai member
-username:member
+#### Sebagai member (login dengan email dan password)
+email:member@gmail.com
 password:12345678
 
 
